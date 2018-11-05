@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ">
+  <uml:Model xmi:id="_KUP_UOAUEeiSOv0xeiuhbA" name="myUberCore">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_Km7qwOAUEeiSOv0xeiuhbA">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_UDoOsOAUEeiSOv0xeiuhbA" name="Customer">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Vs9HgOAVEeiSOv0xeiuhbA" name="Property1">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_YqhE0OAVEeiSOv0xeiuhbA">
+          <body>+ name : tring</body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_dWrR8OAVEeiSOv0xeiuhbA" name="counter" visibility="private" aggregation="composite">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_jao_gOAVEeiSOv0xeiuhbA">
+          <body>+ name : &lt;String> {unique}</body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bUWtsOA9EeiSOv0xeiuhbA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bUt6EOA9EeiSOv0xeiuhbA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_lLQBgOAVEeiSOv0xeiuhbA" name="name">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_m07VEOAVEeiSOv0xeiuhbA">
+          <body>surname: </body>
+        </ownedComment>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Ic8tYOA-EeiSOv0xeiuhbA" name="surname" visibility="public">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_O514UOA-EeiSOv0xeiuhbA" name="CustomerID" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_gEEvsOA-EeiSOv0xeiuhbA" name="customerPosition"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_nVFfMOA-EeiSOv0xeiuhbA" name="GPS"/>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Yq4RMOAVEeiSOv0xeiuhbA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Yq6tcOAVEeiSOv0xeiuhbA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+  </uml:Model>
+  <ActionLanguage:TextualRepresentation xmi:id="_YrEecOAVEeiSOv0xeiuhbA" base_Comment="_YqhE0OAVEeiSOv0xeiuhbA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_jao_geAVEeiSOv0xeiuhbA" base_Comment="_jao_gOAVEeiSOv0xeiuhbA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+  <ActionLanguage:TextualRepresentation xmi:id="_m07VEeAVEeiSOv0xeiuhbA" base_Comment="_m07VEOAVEeiSOv0xeiuhbA" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+</xmi:XMI>

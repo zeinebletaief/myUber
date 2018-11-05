@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_Kb2cIOAUEeiSOv0xeiuhbA" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_UD4tYOAUEeiSOv0xeiuhbA" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_UEP5wOAUEeiSOv0xeiuhbA" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_UEQg0OAUEeiSOv0xeiuhbA" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_UEQg0eAUEeiSOv0xeiuhbA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UEX1kOAUEeiSOv0xeiuhbA" type="Class_AttributeCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_dW7JkOAVEeiSOv0xeiuhbA" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="myUberCore.uml#_dWrR8OAVEeiSOv0xeiuhbA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_dW7JkeAVEeiSOv0xeiuhbA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_lLbnsOAVEeiSOv0xeiuhbA" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="myUberCore.uml#_lLQBgOAVEeiSOv0xeiuhbA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_lLbnseAVEeiSOv0xeiuhbA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_IeflgOA-EeiSOv0xeiuhbA" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="myUberCore.uml#_Ic8tYOA-EeiSOv0xeiuhbA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_IeflgeA-EeiSOv0xeiuhbA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_O65BMOA-EeiSOv0xeiuhbA" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="myUberCore.uml#_O514UOA-EeiSOv0xeiuhbA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_O65BMeA-EeiSOv0xeiuhbA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_gFN_MOA-EeiSOv0xeiuhbA" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="myUberCore.uml#_gEEvsOA-EeiSOv0xeiuhbA"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_gFN_MeA-EeiSOv0xeiuhbA"/>
+      </children>
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UEYcoOAUEeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UEYcoeAUEeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UEYcouAUEeiSOv0xeiuhbA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UEYco-AUEeiSOv0xeiuhbA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UEYcpOAUEeiSOv0xeiuhbA" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UEYcpeAUEeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UEYcpuAUEeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UEYcp-AUEeiSOv0xeiuhbA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UEYcqOAUEeiSOv0xeiuhbA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_UEYcqeAUEeiSOv0xeiuhbA" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_UEYcquAUEeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_UEYcq-AUEeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_UEYcrOAUEeiSOv0xeiuhbA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UEYcreAUEeiSOv0xeiuhbA"/>
+    </children>
+    <element xmi:type="uml:Class" href="myUberCore.uml#_UDoOsOAUEeiSOv0xeiuhbA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UD4tYeAUEeiSOv0xeiuhbA" x="500" y="220" width="301" height="461"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_nVNbAOA-EeiSOv0xeiuhbA" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_nVOpIOA-EeiSOv0xeiuhbA" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_nVPQMOA-EeiSOv0xeiuhbA" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_nVPQMeA-EeiSOv0xeiuhbA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_nVP3QOA-EeiSOv0xeiuhbA" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_nVP3QeA-EeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_nVP3QuA-EeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_nVP3Q-A-EeiSOv0xeiuhbA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nVP3ROA-EeiSOv0xeiuhbA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_nVQeUOA-EeiSOv0xeiuhbA" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_nVQeUeA-EeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_nVQeUuA-EeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_nVQeU-A-EeiSOv0xeiuhbA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nVQeVOA-EeiSOv0xeiuhbA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_nVRFYOA-EeiSOv0xeiuhbA" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_nVRFYeA-EeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_nVRFYuA-EeiSOv0xeiuhbA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_nVRFY-A-EeiSOv0xeiuhbA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nVRFZOA-EeiSOv0xeiuhbA"/>
+    </children>
+    <element xmi:type="uml:Class" href="myUberCore.uml#_nVFfMOA-EeiSOv0xeiuhbA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nVNbAeA-EeiSOv0xeiuhbA" x="140" y="460"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_Kb2cIeAUEeiSOv0xeiuhbA" name="diagram_compatibility_version" stringValue="1.4.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_Kb2cIuAUEeiSOv0xeiuhbA"/>
+  <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_Kb2cI-AUEeiSOv0xeiuhbA" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
+    <owner xmi:type="uml:Model" href="myUberCore.uml#_KUP_UOAUEeiSOv0xeiuhbA"/>
+  </styles>
+  <element xmi:type="uml:Model" href="myUberCore.uml#_KUP_UOAUEeiSOv0xeiuhbA"/>
+</notation:Diagram>
