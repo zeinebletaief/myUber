@@ -1,86 +1,116 @@
 package myUberCore;
 
+
+//import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.Calendar;
+//import java.util.Date;
 
-public class Customer implements Observer{
-	private static long counter;
-	public String name;
-	public String surname;
-	private Long customerId;
-	public GPS cusPosition;
-	private ArrayList<Message>  messageBox;
-	private CustomerBalance balance;
-	private long creditCard; 
-	public Ride currentRide; 
+public class MyUber {
+	private ArrayList<Car> cars;
+	private ArrayList<Driver> drivers;
+	private ArrayList<Customer> customers;
+	private BookOfRides ridesHistory;
+	private Calendar currentTime; 
 	
-	//constructors
-	public Customer(String name, String surname, long creditCard) {
+	
+//constructors  
+	public MyUber() {
+		this.cars = new ArrayList<Car>();
+		this.customers = new ArrayList<Customer>();
+		this.drivers = new ArrayList<Driver>();
+		this.ridesHistory = new BookOfRides();
+		
+	}
+	
+
+	//creation of a myUber network avec un nombre determiné de chaque element //TODO 
+	public MyUber(long Nc,long Nd,long Nu) {
+		this.cars = new ArrayList<Car>();
+		this.customers = new ArrayList<Customer>();
+		this.drivers = new ArrayList<Driver>();
+		this.ridesHistory = new BookOfRides();
+		
+	}
+
+	public MyUber(ArrayList<Car> cars, ArrayList<Driver> drivers, ArrayList<Customer> customers) {
 		super();
-		this.name = name;
-		this.surname = surname;
-		this.creditCard = creditCard;
-		Customer.counter ++;
-		this.customerId = counter;
-		this.messageBox = new ArrayList<Message>();  
-		this.cusPosition = new GPS(0, 0);
-		this.balance = new CustomerBalance();
-		}
+		this.cars = cars;
+		this.drivers = drivers;
+		this.customers = customers;
+	}
 
+//getters & setters 
+
+	public ArrayList<Car> getCars() {
+		return cars;
+	}
+
+	public ArrayList<Driver> getDrivers() {
+		return drivers;
+	}
+
+	public ArrayList<Customer> getCustomers() {
+		return customers;
+	}
+
+	public BookOfRides getRidesHistory() {
+		return ridesHistory;
+	}
+
+	public void setCars(ArrayList<Car> cars) {
+		this.cars = cars;
+	}
+
+	public void setDrivers(ArrayList<Driver> drivers) {
+		this.drivers = drivers;
+	}
+
+	public void setCustomers(ArrayList<Customer> customers) {
+		this.customers = customers;
+	}
+
+	public void setRidesHistory(BookOfRides ridesHistory) {
+		this.ridesHistory = ridesHistory;
+	}
+
+
+	public Calendar getCurrentTime() {
+		//Date date = new Date();
+		//Calendar calendar = new Calendar( );
+		//calendar.setTime(date);
+		//this.currentTime = calendar; 
+		return currentTime;
 	
-	
-//Getters & setters
-	public long getCounter() {
-		return counter;
-	}
-	public String getName() {
-		return name;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public Long getCustomerId() {
-		return customerId;
-	}
-	public GPS getCusPosition() {
-		return cusPosition;
-	}
-	public ArrayList<Message> getMessageBox() {
-		return messageBox;
-	}
-	public CustomerBalance getBalance() {
-		return balance;
-	}
-	public long getCreditCard() {
-		return creditCard;
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCurrentTime(Calendar currentTime) {
+		this.currentTime = currentTime;
 	}
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
-	public void setCreditCard(long creditCard) {
-		this.creditCard = creditCard;
-	}
-
-
 	//*****************************************************************//
 //	Methods 							   //
 //*****************************************************************//	
 
 
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
+
+
+	public void addCustomer() {
+		
+	}
+	
+	public void addCar() {
+		
+	}
+	
+	public void addDriver() {
+		
+	}
+
+	public void addRide() {
 		
 	}
 
 	
 }
+
