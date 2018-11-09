@@ -72,6 +72,8 @@ public class Driver implements Observer{
 		
 	}
 	
-	
+	public void acceptRide() { //change driver status, add Ride to book, confirm booking, notify customer 
+		
+	}
 
 }
