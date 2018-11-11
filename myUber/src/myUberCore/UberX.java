@@ -2,15 +2,21 @@ package myUberCore;
 
 public class UberX implements Ride{
 	double length; //Ride length in
-	String trafficKind; 
 	public Driver driver;
 	public Customer customer;
+	static Car car = new Standard();
+	public double[] trafficState = new double[3]; //holds the traffic probability of each state (low, medium & high)
+
 	
-	
-	public UberX(Customer customer, String trafficKind,  double length) {
+//constructor 		
+	public UberX(Customer customer, double[] trafficState,  double length) {
 		super();
 		this.length = length;
-		this.trafficKind = trafficKind;
+		this.customer = customer;
+		this.trafficState = trafficState;
+	}
+
+	public UberX(Customer customer) {
 		this.customer = customer;
 	}
 
@@ -18,12 +24,7 @@ public class UberX implements Ride{
 
 	@Override
 	public double rideFare() {
-		double trafficRate = 1;
-		switch(trafficKind.toUpperCase()) {
-			case "MEDIUM":
-				trafficRate = 1.1;
-			case "HEAVY":
-				trafficRate = 1.5;}
+		double trafficRate = 1 * trafficState[0] + 1.1 * trafficState[1] + 1.5 * trafficState[2];
 		double basicRate = 0;
 		if (length <5) { basicRate = 3.3;}
 		else{
@@ -35,7 +36,14 @@ public class UberX implements Ride{
 		
 		return basicRate * trafficRate * length;
 	}
+
+
+
+	@Override
+	public void rideSearch() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	}
-
 
