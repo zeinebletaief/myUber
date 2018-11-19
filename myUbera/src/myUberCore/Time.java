@@ -4,6 +4,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 public class Time extends Date{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//Constructors
 	public Time() {
 		super();
@@ -49,6 +53,7 @@ public class Time extends Date{
 		return traffic;
 	}
 	//toString
+	@SuppressWarnings("deprecation")
 	public String toString() {
 		return this.getDay()+"/"+this.getMonth()+"/"+this.getYear()+"  "+this.getHours()+":"+this.getMinutes()+":"+this.getSeconds();
 	}
