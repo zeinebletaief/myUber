@@ -44,6 +44,7 @@ public class Customer extends User{
 		this.addMessage(new Message("Ride desserved ! ","Uber",ride.getTime()));
 		ride.getCar().getDriver().setStatus(DriverStatus.onDuty);
 		ride.setStatus(BookingStatus.completed);
+		BookOfRides.addRide(ride);
 		try {
 		    this.rate(ride.getCar().getDriver(),reader);
 		}catch(TypingError e) {
@@ -53,11 +54,11 @@ public class Customer extends User{
 	}
 	public boolean doYouCancel(Scanner reader) throws TypingError {
 		boolean answer = false;
-		System.out.println("Do you want to cancel the ride ? [T/F] ");
+		System.out.println("Do you want to cancel the ride ? [Yes/No] ");
 		String a = reader.next(); 
-		if(a=="T") {
+		if(a.equalsIgnoreCase("Yes")) {
 			answer=true;
-		} else if(a == "F"){
+		} else if(a.equalsIgnoreCase("No")){
 			answer=false;
 		} else {
 			throw new TypingError();
@@ -65,7 +66,7 @@ public class Customer extends User{
 		return answer;
 	}
 	public void rate(Driver driver,Scanner reader) throws TypingError {
-		System.out.println("Rate your Driver : ");
+		System.out.println("Rate your Driver [from 1 to 5]: ");
 		int a = reader.nextInt(); 
 		if(a>5 || a<0) {
 			throw new TypingError();
@@ -73,68 +74,7 @@ public class Customer extends User{
 		System.out.println("Thank you for rating.");
 		driver.setRating(((driver.getRating()*(driver.getBalance().getNumRides()-1))+a)/(driver.getBalance().getNumRides()));
 	}
-	//getters&setters
-
-	public void addMessage(Message message) {
-		this.getMessageBox().add(message);
-	}
-	public CustomerBalance getBalance() {
-		return balance;
-	}
-
-	public void setBalance(CustomerBalance balance) {
-		this.balance = balance;
-	}
-
-	public GPS getCusPosition() {
-		return cusPosition;
-	}
-
-	public void setCusPosition(GPS cusPosition) {
-		this.cusPosition = cusPosition;
-	}
-
-	public ArrayList<Message> getMessageBox() {
-		return messageBox;
-	}
-
-	public void setMessageBox(ArrayList<Message> messageBox) {
-		this.messageBox = messageBox;
-	}
-
-	public long getCreditCard() {
-		return creditCard;
-	}
-
-	public void setCreditCard(long creditCard) {
-		this.creditCard = creditCard;
-	}
-	public void addPoolRequest(RideBooking poolRequest) {
-		int totalSeats = 0;
-		if (Customer.poolRequests.size()>0) {
-			for (RideBooking pool:Customer.poolRequests) {
-				totalSeats=totalSeats+pool.getSeats();
-			}//calcul des seats reservés
-		}
-		
-		if ((totalSeats+poolRequest.getSeats()<=4) && (Customer.poolRequests.size()<3)) {
-			Customer.poolRequests.add(poolRequest);	
-		} else {
-			Customer.full=WaitingState.NotFit;
-		}
-		
-		if ((totalSeats+poolRequest.getSeats()==4) || (Customer.poolRequests.size()==3)) {
-			Customer.full=WaitingState.Full;
-		}
-	}
-	public void endPoolRequest() {
-		Customer.poolRequests.removeAll(Customer.poolRequests);
-		Customer.full=WaitingState.Empty;
-	}
-	//toString
-	public String toString() {
-		return this.getName() + " "+this.getSurname()+" ID : "+this.getID();
-	}
+	
 	//*****************************************************************//
 //	Methods 							   //
 //*****************************************************************//	
@@ -157,7 +97,6 @@ public class Customer extends User{
 		ArrayList<Double> fares= request.estimateFares();
 		System.out.println("Please choose the type of ride : [UberPool / UberX / UberBlack / UberVan]");
 		String type = reader.next();
-		reader.close();
 		if(!(type.equalsIgnoreCase("UberX") || type.equalsIgnoreCase("UberPool")||type.equalsIgnoreCase("UberBlack")||type.equalsIgnoreCase("UberVan"))) {
 			throw new TypingError();
 		}
@@ -178,7 +117,7 @@ public class Customer extends User{
 	public Ride chooseRideType(String type,RideBooking ridebooked) {
 		Ride result = null;
 		RideFactory factory = new RideFactory();
-		if (type=="UberPool") {
+		if (type.equalsIgnoreCase("UberPool")) {
 			if (Customer.full==WaitingState.Empty) { //if we can put the request in the waiting list, we add it
 			    this.addPoolRequest(ridebooked);
 			    this.balance.addRide(ridebooked.estimateFares().get(1), ridebooked.rideDuration());
@@ -200,6 +139,34 @@ public class Customer extends User{
 		return result;
 	}
 	
+	//test choosearide
+/*	public static void main(String[] args) {
+		Customer moez = new Customer("Moez", "Dbira", 321654);
+		Customer zeineb= new Customer("Zeineb","Ltaief",454524);
+		RideBooking aa = moez.bookaRide(new GPS(10,5), new Time(), 2);
+		RideBooking bb = zeineb.bookaRide(new GPS(0,5), new Time(), 1);
+		Ride x = moez.chooseRideType("UberX", aa);
+		Ride y = zeineb.chooseRideType("UberX", bb);
+		Car a = new Standard(new GPS(-2,4));
+		a.addOwner(new Driver("Khalil", "Bergaoui"));
+		ArrayList<Car> allCars = new ArrayList<Car>();
+		allCars.add(a);
+		x.lookForCar(allCars,new Scanner(System.in));
+		
+		/*for(Customer c:x.getCustomers()) {
+			System.out.println(c);
+			System.out.println(x.getID());
+			System.out.println(x.getType());
+			System.out.println(x.getCosts().get(0));
+		}
+		for(Customer c:y.getCustomers()) {
+			System.out.println(c);
+			System.out.println(y.getID());
+			System.out.println(y.getType());
+			System.out.println(y.getCosts().get(0));
+		}*/
+		
+	//}
 	
 	//test de bookaRide
 	/*
@@ -253,7 +220,68 @@ public class Customer extends User{
 			System.out.println("durée : "+aa.rideDuration()+" secondes");
 		}*/ /*
 	}         */  
-	
+	//getters&setters
+
+		public void addMessage(Message message) {
+			this.getMessageBox().add(message);
+		}
+		public CustomerBalance getBalance() {
+			return balance;
+		}
+
+		public void setBalance(CustomerBalance balance) {
+			this.balance = balance;
+		}
+
+		public GPS getCusPosition() {
+			return cusPosition;
+		}
+
+		public void setCusPosition(GPS cusPosition) {
+			this.cusPosition = cusPosition;
+		}
+
+		public ArrayList<Message> getMessageBox() {
+			return messageBox;
+		}
+
+		public void setMessageBox(ArrayList<Message> messageBox) {
+			this.messageBox = messageBox;
+		}
+
+		public long getCreditCard() {
+			return creditCard;
+		}
+
+		public void setCreditCard(long creditCard) {
+			this.creditCard = creditCard;
+		}
+		public void addPoolRequest(RideBooking poolRequest) {
+			int totalSeats = 0;
+			if (Customer.poolRequests.size()>0) {
+				for (RideBooking pool:Customer.poolRequests) {
+					totalSeats=totalSeats+pool.getSeats();
+				}//calcul des seats reservés
+			}
+			
+			if ((totalSeats+poolRequest.getSeats()<=4) && (Customer.poolRequests.size()<3)) {
+				Customer.poolRequests.add(poolRequest);	
+			} else {
+				Customer.full=WaitingState.NotFit;
+			}
+			
+			if ((totalSeats+poolRequest.getSeats()==4) || (Customer.poolRequests.size()==3)) {
+				Customer.full=WaitingState.Full;
+			}
+		}
+		public void endPoolRequest() {
+			Customer.poolRequests.removeAll(Customer.poolRequests);
+			Customer.full=WaitingState.Empty;
+		}
+		//toString
+		public String toString() {
+			return this.getName() + " "+this.getSurname()+" ID : "+this.getID();
+		}
 }
 
 

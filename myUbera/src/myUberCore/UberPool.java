@@ -15,6 +15,7 @@ public class UberPool extends Ride{
 		this.setStatus(BookingStatus.unconfirmed);
 		this.setType("UberPool");
 		this.setTime(request.getRequestTime());
+		
 	}
 	//Constructor by waitingList
 	public UberPool(ArrayList<RideBooking> requests) {

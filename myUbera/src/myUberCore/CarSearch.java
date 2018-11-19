@@ -15,16 +15,16 @@ public class CarSearch { //It is a car search "factory"
 		ArrayList<Car> sortedCars = new ArrayList<Car>();
 		
 		//setting the car type corresponding to the ride type
-		if ((ride.getType()=="UberPool") || (ride.getType()=="UberX")) {
+		if ((ride.getType().equalsIgnoreCase("UberPool")) || (ride.getType().equalsIgnoreCase("UberX"))) {
 			carType = "Standard";
-		} else if ((ride.getType()=="UberBlack")) {
+		} else if (ride.getType().equalsIgnoreCase("UberBlack")) {
 			carType = "Berline";
 		} else {
 			carType = "Van";
 		}
 		//Corresponding car type list
 		for (Car i : cars) {
-			if (i.getCarType()==carType) {
+			if (i.getCarType().equalsIgnoreCase(carType)) {
 				carMap.put(i.getCarPosition().getRideDistance(ride.getStartpoints(),ride.getDestinations()), i);
 			}
 		}
@@ -35,15 +35,14 @@ public class CarSearch { //It is a car search "factory"
 	}
 	public Car findCar (Ride ride,ArrayList<Car> cars,Scanner reader) {
 		Car result =null;
+		ArrayList<Car> sortedcars=this.sortCars(ride, cars);
 		try {
-			Car car = this.sortCars(ride, cars).get(0);
-			int i=0;
+			int i=-1;
 			boolean answer = false;
 			while (answer == false) {
-				answer=car.getDriver().getDriverAnswer(ride,reader); //asking Drivers
 				i++;
-				result = car;
-				car=this.sortCars(ride, cars).get(i);
+				answer=sortedcars.get(i).getDriver().getDriverAnswer(ride,reader); //asking Drivers
+				result=sortedcars.get(i);
 			}
 			
 		} catch(TypingError e) {

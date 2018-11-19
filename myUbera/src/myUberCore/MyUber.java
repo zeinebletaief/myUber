@@ -60,12 +60,12 @@ public class MyUber {
 		}
 		for (Car c:this.cars) {
 			for (Driver d:this.drivers) {
-				System.out.println("Do you want to add "+d.getName()+" to the list of owners of "+c.getID()+" ? [Y/N]");
+				System.out.println("Do you want to add "+d.getName()+" to the list of owners of "+c.getID()+" ? [Yes/No]");
 				String answer = reader.next();
-				if(answer =="Y") {
+				if(answer.equalsIgnoreCase("Yes")) {
 					c.addOwner(d);
-					System.out.println("Do you want to set "+d.getName()+" as the current driver of "+c.getID()+" ? [Y/N]");
-					c.setDriver(d);
+					//System.out.println("Do you want to set "+d.getName()+" as the current driver of "+c.getID()+" ? [Y/N]");
+					//c.setDriver(d);
 				}				
 			}
 		}
@@ -150,14 +150,15 @@ public class MyUber {
 	public void addRide() {
 		
 	}
+
 public static void main(String[] args) throws TypingError{
 	Scanner reader = new Scanner(System.in);
-	MyUber univer=new MyUber(1,1,1,reader);
+	MyUber univer=new MyUber(3,5,5,reader);
 	univer.simulation(univer.getCustomers().get(0),reader);
-	/*univer.simulation(univer.getCustomers().get(2),reader);
-	univer.simulation(univer.getCustomers().get(1),reader);*/
-	
+	univer.simulation(univer.getCustomers().get(2),reader);
+	univer.simulation(univer.getCustomers().get(1),reader);
 	reader.close();
+	
 }
 	
 }

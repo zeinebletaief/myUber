@@ -65,6 +65,8 @@ public abstract class Car {
 	}
 	public void addOwner(Driver driver) {
 		this.owners.add(driver);
+		driver.setStatus(DriverStatus.onDuty);
+		this.setDriver(driver);
 	}
 	public void changeShifts(ArrayList<Shift> shifts) {
 		this.setShifts(shifts);

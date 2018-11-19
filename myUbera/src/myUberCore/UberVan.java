@@ -15,6 +15,7 @@ public class UberVan extends Ride{
 		this.setStatus(BookingStatus.unconfirmed);
 		this.setType("UberVan");
 		this.setTime(request.getRequestTime());
+		
 	}
 	
 	// Methods

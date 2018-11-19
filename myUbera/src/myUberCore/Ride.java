@@ -17,7 +17,7 @@ public abstract class Ride implements Observable{
 	private boolean carfound=false;
 	private boolean finish=false;
 	
-	private ArrayList<Observer> observers;
+	private ArrayList<Observer> observers=new ArrayList<Observer>();
 
 	//methods
 	public Duration getRideDuration() {
@@ -53,6 +53,7 @@ public abstract class Ride implements Observable{
 	}
 	public void finishRide(Scanner reader) {
 		this.setStatus(BookingStatus.completed);
+		this.setFinish(true);
 		this.notifyObserversFinish(reader);
 	}
 	//Observer pattern methods
@@ -83,13 +84,13 @@ public abstract class Ride implements Observable{
 	}
 	//getters&setters
 	
-		public boolean isFinish() {
+	public boolean isFinish() {
 		return finish;
 	}
 	public void setFinish(boolean finish) {
 		this.finish = finish;
 	}
-		public Time getTime() {
+	public Time getTime() {
 		return time;
 	}
 	public void setTime(Time time) {
@@ -150,6 +151,13 @@ public abstract class Ride implements Observable{
 		public void setStatus(BookingStatus status) {
 			this.status = status;
 		}
+		
+		public ArrayList<Observer> getObservers() {
+			return observers;
+		}
+		public void setObservers(ArrayList<Observer> observers) {
+			this.observers = observers;
+		}
 		//toString
 		public String toString() {
 			String ch="";
@@ -157,7 +165,7 @@ public abstract class Ride implements Observable{
 			for (Customer i:this.getCustomers()) {
 				ch=ch+i.getName()+" ; ";
 			}
-			ch="|Prices: ";
+			ch=ch+"|Prices: ";
 			for(Cost c:this.getCosts()) {
 				ch=ch+c;
 			}

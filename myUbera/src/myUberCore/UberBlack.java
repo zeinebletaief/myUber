@@ -15,6 +15,7 @@ public class UberBlack extends Ride{
 		this.setStatus(BookingStatus.unconfirmed);
 		this.setType("UberBlack");
 		this.setTime(request.getRequestTime());
+		
 	}
 	
 	// Methods

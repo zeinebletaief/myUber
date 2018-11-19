@@ -30,15 +30,17 @@ public class Driver extends User {
 		}
 		System.out.println("Pick up locations : "+ch);
 		if (this.getStatus()==DriverStatus.onDuty) {
-			System.out.println("Enter your answer [T/F]: ");
-			String a = reader.next(); 
-			if(a=="T") {
+			System.out.println("Enter your answer [Yes/No]: ");
+			String a = reader.next();
+			if(a.equalsIgnoreCase("Yes")) {
 				answer=true;
-			} else if(a == "F"){
+			} else if(a.equalsIgnoreCase("No")){
 				answer=false;
 			} else {
 				throw new TypingError();
 			}
+		}else {
+			System.out.println("Driver's status : off duty ");
 		}
 		return answer;
 	}
